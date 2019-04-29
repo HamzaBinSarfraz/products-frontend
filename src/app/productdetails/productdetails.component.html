@@ -2,7 +2,7 @@
   <div class="row">
       <div class="col-4 mt-2" *ngFor="let item of productsArray">
         <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="" alt="Card image cap">
+          <img class="card-img-top" src="https://products-hamza.herokuapp.com/{{item.productImage}}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{item.productName}}</h5>
             <p class="card-text">{{item.productDetail}}</p>

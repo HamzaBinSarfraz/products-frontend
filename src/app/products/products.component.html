@@ -1,21 +1,29 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-12">
-      <form [formGroup] = 'productForm'>
+      <form [formGroup]='productForm'>
         <div class="form-group">
           <label>Enter Product Name</label>
-          <input type="text" class="form-control" placeholder="Enter Product Name" formControlName="productName">
+          <input type="text" class="form-control" placeholder="Enter Product Name" formControlName="productName"
+            required>
         </div>
         <div class="form-group">
           <label>Enter Product Detail</label>
-          <textarea type="password" class="form-control" placeholder="Enter Product Detail" formControlName="productDetail"> </textarea>
+          <textarea type="password" class="form-control" placeholder="Enter Product Detail"
+            formControlName="productDetail" required> </textarea>
         </div>
         <div class="form-group">
-          <input type="file" formControlName="productImage" (change)="onFileSelected($event)">
+          <input type="file" (change)="onFileSelected($event)" required>
         </div>
         <button type="submit" class="btn btn-primary" (click)="addProduct()">Submit</button>
+        <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert" *ngIf="errorChecker">
+          <strong>Whoops!</strong> Form can not be empty
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
       </form>
     </div>
   </div>
 </div>
-

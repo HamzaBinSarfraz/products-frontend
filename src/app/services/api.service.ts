@@ -9,10 +9,10 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   post(url: string, data: any) {
-    return this.http.post(url, data);
+    return this.http.post<any>(url, data);
   }
 
   get(url: string) {
-    return this.http.get(url);
+    return this.http.get<any>(url);
   }
 }
